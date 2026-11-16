@@ -1,0 +1,130 @@
+/* Layout measurements come from the Figma frame (375 x 812) */
+.login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* Blue gradient header, 453px tall in the design */
+.login__hero {
+  position: relative;
+  flex: none;
+  height: 453px;
+  padding-top: env(safe-area-inset-top);
+  background: linear-gradient(to bottom, var(--blue), var(--blue-light));
+}
+
+/* Illustration (plane + clouds) runs 18px past the header so clouds overlap the inputs */
+.login__art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 471px;
+  object-fit: cover;
+  object-position: top center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.login__title {
+  position: absolute;
+  top: 334px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.4629px;
+  color: #fff;
+  z-index: 1;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.login__input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  font-family: inherit;
+  font-size: 15px;
+  letter-spacing: -0.24px;
+  color: #000;
+  outline: none;
+}
+
+.login__input::placeholder {
+  color: var(--text-muted);
+}
+
+.login__input:focus {
+  box-shadow: 0 0 0 2px var(--blue), 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.login__button {
+  width: 100%;
+  height: 40px;
+  margin-top: 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--blue);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: -0.24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login__error {
+  margin: -4px 0 0;
+  font-size: 13px;
+  color: #d93025;
+}
+
+.login__link {
+  font-size: 13px;
+  letter-spacing: -0.078px;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.login__link--staff {
+  align-self: center;
+  margin-top: 8px;
+}
+
+/* "Don't have account? Register new account" sits at the bottom of the screen */
+.login__register {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: auto 0 0;
+  padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+  font-size: 13px;
+  letter-spacing: -0.078px;
+  color: var(--text-muted);
+}
